@@ -14,11 +14,13 @@ import org.springframework.stereotype.Component;
 public class DeprecatedLog {
     @Before("log()")
     public void logMethod(JoinPoint jp) {
-        var string = jp.getSignature().getName();
-        log.info("deprecated class called " + string);
+        var classname = jp.getSignature().getDeclaringTypeName();
+        var methodName = jp.getSignature().getName();
+        log.info("deprecated class " + classname + " called a method " + methodName);
     }
 
     @Pointcut("@annotation(java.lang.Deprecated)")
     public void log() {
+        System.out.println("ok");
     }
 }
