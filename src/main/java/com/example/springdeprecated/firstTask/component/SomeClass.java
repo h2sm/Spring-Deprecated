@@ -1,4 +1,4 @@
-package com.example.springdeprecated.component;
+package com.example.springdeprecated.firstTask.component;
 
 public class SomeClass {
     @Deprecated

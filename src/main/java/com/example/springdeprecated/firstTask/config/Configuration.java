@@ -1,10 +1,9 @@
-package com.example.springdeprecated.config;
+package com.example.springdeprecated.firstTask.config;
 
-import com.example.springdeprecated.component.SomeClass;
-import com.example.springdeprecated.log.DeprecatedLog;
+import com.example.springdeprecated.firstTask.component.SomeClass;
+import com.example.springdeprecated.firstTask.log.DeprecatedLog;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.stereotype.Component;
 
 @org.springframework.context.annotation.Configuration
 @EnableAspectJAutoProxy

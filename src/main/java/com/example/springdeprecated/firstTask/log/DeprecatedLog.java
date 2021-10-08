@@ -1,4 +1,4 @@
-package com.example.springdeprecated.log;
+package com.example.springdeprecated.firstTask.log;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
