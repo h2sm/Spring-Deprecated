@@ -11,7 +11,7 @@ public class TimeConsumingClass {
         sortDesc(randomArr);
     }
 
-    private double[] createNewRandomDoubleArray(Integer numElems) {
+    public double[] createNewRandomDoubleArray(Integer numElems) {
         double[] arr = new double[numElems];
         for (int i = 0; i < numElems; i++) {
             arr[i] = ran.nextDouble();
@@ -19,7 +19,7 @@ public class TimeConsumingClass {
         return arr;
     }
 
-    private void sortAsc(double[] arr) {
+    public void sortAsc(double[] arr) {
         int n = arr.length;
         for (int j = 1; j < n; j++) {
             double key = arr[j];
@@ -32,7 +32,7 @@ public class TimeConsumingClass {
         }
     }
 
-    private void sortDesc(double[] arr) {
+    public void sortDesc(double[] arr) {
         int n = arr.length;
         for (int i = 1; i < n; i++) {
             double valueToSort = arr[i];

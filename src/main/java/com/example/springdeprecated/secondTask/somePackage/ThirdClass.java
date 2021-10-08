@@ -10,13 +10,13 @@ public class ThirdClass {
     private final TimeConsumingClass tcc;
     private final Scanner sc = new Scanner(System.in);
 
-    public void doThis() {
-        fc.saySomething();
+    public void entrypoint() {
+        fc.sayWoow();
         fc.loadFile();
         tcc.doSomethingTimeConsuming(takeTime());
     }
 
-    private int takeTime() {
+    public int takeTime() {
         System.out.println("input any integer for having fun");
         return sc.nextInt();
     }

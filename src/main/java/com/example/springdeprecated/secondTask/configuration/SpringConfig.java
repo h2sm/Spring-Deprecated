@@ -20,14 +20,15 @@ public class SpringConfig {
     public TimeConsumingClass tcc() {
         return new TimeConsumingClass();
     }
+
     @Bean
-    public ThirdClass tc(){
-        return new ThirdClass(fc(),tcc());
+    public TimeLogging tl() {
+        return new TimeLogging();
     }
 
     @Bean
-    public TimeLogging tl(){
-        return new TimeLogging();
+    public ThirdClass tc() {
+        return new ThirdClass(fc(), tcc());
     }
 
 }

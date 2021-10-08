@@ -3,7 +3,7 @@ package com.example.springdeprecated.secondTask.somePackage;
 import java.io.File;
 
 public class FirstClass {
-    public void saySomething() {
+    public void sayWoow() {
         System.out.println("woow");
     }
 
