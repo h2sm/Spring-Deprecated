@@ -8,6 +8,8 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.Map;
 import java.util.TreeMap;
 
 @Aspect
@@ -28,18 +30,18 @@ public class TimeLogging {//логгируем имя класса + имя ме
         var classname = jp.getSignature().getDeclaringTypeName();
         var methodName = jp.getSignature().getName();
         var key = classname + "-" + methodName;
-        if (map.containsKey(key)){
+        if (map.containsKey(key)) {
             var startTime = map.get(key);
             var diff = System.currentTimeMillis() - startTime;
-            map.put(key,diff);
+            map.put(key, diff);
         }
         print();
     }
 
-    private void print(){
-        System.out.println(map.size());
-        map.values().stream().sorted().forEach(System.out::println);
-        //map.forEach((k,v) -> System.out.println("Class: " + k + " took " + v + " ms."));
+    private void print() {
+        map.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .forEach(System.out::println);
     }
 
     @Pointcut("execution(* com.example.springdeprecated.secondTask.somePackage.*.*(..))")
