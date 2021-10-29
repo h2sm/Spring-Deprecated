@@ -31,10 +31,8 @@ public class TimeLogging {
         map.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .forEach(System.out::println);
-        System.out.println(map.size());
     }
 
-    //@Pointcut("execution(* com.example.springdeprecated.secondTask.somePackage.*.*(..))")
     @Pointcut("within(com.example.springdeprecated.secondTask.somePackage..*)")
     public void point() {
 
