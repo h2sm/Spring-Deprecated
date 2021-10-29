@@ -7,6 +7,7 @@ import com.example.springdeprecated.secondTask.timeLogging.TimeLogging;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 @EnableAspectJAutoProxy
@@ -22,6 +23,7 @@ public class SpringConfig {
     }
 
     @Bean
+    @Scope(value = "singleton")
     public TimeLogging tl() {
         return new TimeLogging();
     }

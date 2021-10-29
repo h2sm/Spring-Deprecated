@@ -22,6 +22,7 @@ public class SpringDeprecatedApplication {
         var x = new AnnotationConfigApplicationContext(SpringConfig.class);
         var bean = x.getBean("tc", ThirdClass.class);
         bean.entrypoint();
+        x.close();
     }
 
 }
